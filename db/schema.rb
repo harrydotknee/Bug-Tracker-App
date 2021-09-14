@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_13_160746) do
+ActiveRecord::Schema.define(version: 2021_09_14_095305) do
 
   create_table "projects", force: :cascade do |t|
     t.string "title"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2021_09_13_160746) do
     t.string "github_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "author_id"
+    t.index ["author_id"], name: "index_projects_on_author_id"
   end
 
   create_table "projects_users", id: false, force: :cascade do |t|

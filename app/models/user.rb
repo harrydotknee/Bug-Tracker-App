@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
          has_and_belongs_to_many :projects
+         has_many :authored_projects, class_name: 'project'
 end
