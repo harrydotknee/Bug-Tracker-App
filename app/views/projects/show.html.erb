@@ -21,4 +21,16 @@
 </p>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Back', projects_path %> |
+<%= link_to 'Add Bug', new_bug_path(project_id: @project.id) %>
+
+<br>
+<br>
+
+<% @bugs.each do |bug| %>
+  <%if bug.project == @project %>
+    <tr>
+      <td><%= bug.title %></td>
+    </tr>
+    <% end %>
+<% end %>
