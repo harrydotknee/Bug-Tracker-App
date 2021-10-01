@@ -11,11 +11,13 @@
 
   <tbody>
     <% @bugs.each do |bug| %>
-      <tr>
-        <td><%= link_to bug.title, bug %></td>
-        <td><%= link_to 'Destroy', bug, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to bug.project.title, project_path(bug.project) %></td>
-      </tr>
+      <% if bug.author == current_user %>
+        <tr>
+          <td><%= link_to bug.title, bug %></td>
+          <td><%= link_to 'Destroy', bug, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to bug.project.title, project_path(bug.project) %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

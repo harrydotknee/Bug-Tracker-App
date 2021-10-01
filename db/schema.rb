@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_30_163019) do
+ActiveRecord::Schema.define(version: 2021_10_01_144328) do
 
   create_table "bugs", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "project_id"
+    t.integer "author_id"
+    t.index ["author_id"], name: "index_bugs_on_author_id"
   end
 
   create_table "project_users", force: :cascade do |t|

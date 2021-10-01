@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
          has_and_belongs_to_many :projects
          has_many :authored_projects, class_name: 'project'
+         has_many :authored_bugs, class_name: 'bug'
 end
