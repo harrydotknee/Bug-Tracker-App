@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @bug.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @bug.description %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= link_to @projects.find(@bug.project_id).title, project_path(@bug.project_id) %>
+</p>
+
+<%= link_to 'Edit', edit_bug_path(@bug), project_id: @project_id %> |
+<%= link_to 'Back', :back %>

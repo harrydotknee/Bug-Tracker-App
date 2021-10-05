@@ -4,15 +4,18 @@ class ProjectsController < ApplicationController
   # GET /projects or /projects.json
   def index
     @projects = Project.all
+    @bugs = Bug.all
   end
 
   # GET /projects/1 or /projects/1.json
   def show
+    @bugs = Bug.all
   end
 
   # GET /projects/new
   def new
     @project = Project.new
+    @bug = Bug.new
   end
 
   # GET /projects/1/edit
