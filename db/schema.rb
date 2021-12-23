@@ -22,11 +22,6 @@ ActiveRecord::Schema.define(version: 2021_10_05_160920) do
     t.index ["author_id"], name: "index_bugs_on_author_id"
   end
 
-  create_table "project_users", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.text "description"

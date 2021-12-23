@@ -10,7 +10,7 @@ class BugsController < ApplicationController
   # GET /bugs/1 or /bugs/1.json
   def show
     @projects = Project.all
-    @users = Users.all
+    @users = User.all
   end
 
   # GET /bugs/new

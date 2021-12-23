@@ -10,6 +10,9 @@ class ProjectsController < ApplicationController
   # GET /projects/1 or /projects/1.json
   def show
     @bugs = Bug.all
+    @projects = Project.all
+    @users = User.all
+    @projects_users = ProjectUser.all
   end
 
   # GET /projects/new
@@ -68,6 +71,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:title, :description, :github_url)
+      params.require(:project).permit(:title, :description, :github_url, :search)
     end
 end
