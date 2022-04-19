@@ -27,6 +27,8 @@
 <br>
 <br>
 
+<input id="add_username" type="text" placeholder="Add User..">
+
 <table class = "table">
   <thead>
     <tr>
@@ -43,7 +45,7 @@
           <td><%= link_to bug.title, bug %></td>
           <td><%= bug.description.to_s[0,20] %></td>
           <td><%= link_to 'Destroy', bug, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          
+
         </tr>
       <% end %>
     <% end %>
